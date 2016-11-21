@@ -1,5 +1,5 @@
 
-public class Item() {
+public class Item {
 
     String name;
     double basePrice;
