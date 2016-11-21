@@ -17,7 +17,53 @@ public class ShoppingBasketTest {
         basket = new ShoppingBasket(basketContents);
     }
 
+    @Test
+    public void hasContents() {
+
+    }
+
+    @Test
+    public void canAddItem() {
+
+    }
+
+    @Test
+    public void canRemoveItem() {
+
+    }
+
+    @Test
+    public void canApplyBogofDiscount() {
+
+    }
+
+    @Test
+    public void canApplyTwentyPoundsOrOverDiscount() {
+
+    }
+
+    @Test
+    public void canApplyLoyaltyDiscount() {
+
+    }
+
+    @Test
+    public void canEmptyBasket() {
+        
+    }
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

@@ -33,11 +33,21 @@ public class ShoppingBasket {
         this.basketContents.delete(item);
     }
 
+    // public applyBogofDiscount() {
 
+    // }
 
+    // public applyTwentyPoundsOrOverDiscount() {
 
+    // }
 
+    // public applyLoyaltyDiscount() {
 
+    // }
+
+    public void emptyBasket() {
+        
+    }
 
 }
 
