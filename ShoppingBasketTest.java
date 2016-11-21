@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 import org.junit.*;
+import java.util.ArrayList;
 
 public class ShoppingBasketTest {
 
@@ -9,11 +10,17 @@ public class ShoppingBasketTest {
     Item drainCleaner = new Item("drain cleaner", 6.99, false);
     Item steak = new Item("steak", 10.49, false);
     Item orange = new Item("orange", 1.00, true);
-
-    ArrayList<Item> basketContents = {steak, orange, orange, toothpaste, orange, toothpaste};
-
+    
+    ArrayList<Item> basketContents = new ArrayList<Item>();
+    
     @Before
     public void before() {
+        basketContents.add(steak);
+        basketContents.add(orange);
+        basketContents.add(orange);
+        basketContents.add(toothpaste);
+        basketContents.add(orange);
+        basketContents.add(toothpaste);
         basket = new ShoppingBasket(basketContents);
     }
 
@@ -49,7 +56,7 @@ public class ShoppingBasketTest {
 
     @Test
     public void canEmptyBasket() {
-        
+
     }
 
 

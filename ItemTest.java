@@ -10,7 +10,7 @@ public class ItemTest {
 
     @Test
     public void hasName() {
-
+        assertEquals("scented candle", smellyCandle.getName());
     }
 
     @Test
@@ -20,7 +20,7 @@ public class ItemTest {
 
     @Test
     public void isBogofOrNot() {
-        
+
     }
 
 

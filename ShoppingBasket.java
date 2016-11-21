@@ -1,27 +1,25 @@
 import java.util.ArrayList;
 
-
-
 public class ShoppingBasket {
 
-    ArrayList basketContents;
+    ArrayList<Item> basketContents;
     double totalBeforeDiscounts;
     double totalAfterDiscounts;
 
-    public void ShoppingBasket() {
+    public ShoppingBasket() {
     }
 
-    public void ShoppingBasket(ArrayList basketContents) {
+    public ShoppingBasket(ArrayList<Item> basketContents) {
         this.basketContents = basketContents;
     }
 
-    public void ShoppingBasket(ArrayList basketContents, double totalBeforeDiscounts, double totalAfterDiscounts) {
+    public ShoppingBasket(ArrayList<Item> basketContents, double totalBeforeDiscounts, double totalAfterDiscounts) {
         this.basketContents = basketContents;
         this.totalBeforeDiscounts = totalBeforeDiscounts;
         this.totalAfterDiscounts = totalAfterDiscounts;
     }
 
-    public ArrayList getBasketContents() {
+    public ArrayList<Item> getBasketContents() {
         return this.basketContents;
     }
 
@@ -30,7 +28,7 @@ public class ShoppingBasket {
     }
 
     public void removeItemFromBasket(Item item) {
-        this.basketContents.delete(item);
+        // this.basketContents.delete(item);
     }
 
     // public applyBogofDiscount() {
@@ -46,7 +44,7 @@ public class ShoppingBasket {
     // }
 
     public void emptyBasket() {
-        
+
     }
 
 }
