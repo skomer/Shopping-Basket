@@ -11,6 +11,10 @@ public class ShoppingBasket {
     public void ShoppingBasket() {
     }
 
+    public void ShoppingBasket(ArrayList basketContents) {
+        this.basketContents = basketContents;
+    }
+
     public void ShoppingBasket(ArrayList basketContents, double totalBeforeDiscounts, double totalAfterDiscounts) {
         this.basketContents = basketContents;
         this.totalBeforeDiscounts = totalBeforeDiscounts;
