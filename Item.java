@@ -11,9 +11,17 @@ public class Item() {
         this.isBogof = isBogof;
     }
 
+    public String getName() {
+        return this.name;
+    }
 
-    
+    public double getBasePrice() {
+        return this.basePrice;
+    }
 
+    public boolean getIsBogof() {
+        return this.isBogof;
+    }
 
 
 
