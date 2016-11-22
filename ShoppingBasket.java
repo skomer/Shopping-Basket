@@ -48,10 +48,21 @@ public class ShoppingBasket {
 
     }
 
+    public applyBogof() {
 
-    // public applyBogof() {
+        // Check if there are bogof eligible items in the basket
+        // If so, apply the discount to them
+        // check for duplicates in the basket?
+        // extract items from the basket who have bogof=true
+        // match them up somehow
+        // 
 
-    // }
+
+
+
+
+
+    }
 
     // public applyTwentyPoundsOrOver() {
 

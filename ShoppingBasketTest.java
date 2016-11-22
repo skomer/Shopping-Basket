@@ -48,6 +48,16 @@ public class ShoppingBasketTest {
         assertEquals(21.47, basket.getTotalBeforeDiscounts(), 0.001);
     }
 
+    @Test
+    public void canCheckForBogofItems() {
+
+    }
+
+    @Test
+    public void canFindBogofPairs() {
+        
+    }
+
 
     @Test
     public void canApplyBogof() {
