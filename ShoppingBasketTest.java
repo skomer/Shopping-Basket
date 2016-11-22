@@ -26,7 +26,8 @@ public class ShoppingBasketTest {
 
     @Test
     public void hasContents() {
-
+        //basket.getBasketContents();
+        assertTrue(basket.getBasketContents().size() > 0);
     }
 
     @Test
