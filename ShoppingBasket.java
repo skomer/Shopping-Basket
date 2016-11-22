@@ -3,8 +3,12 @@ import java.util.ArrayList;
 public class ShoppingBasket {
 
     ArrayList<Item> basketContents;
+    ArrayList<Item> bogofItems;
     double totalBeforeDiscounts;
     double totalAfterDiscounts;
+
+    double bogofDiscount;
+
 
     public ShoppingBasket() {
     }
@@ -40,6 +44,23 @@ public class ShoppingBasket {
         this.basketContents.remove(item);
     }
 
+    public ArrayList<Item> getBogofItems() {
+        bogofItems = new ArrayList<Item>();
+        for (int i=0; i < basketContents.size(); i++) {
+            Item item = basketContents.get(i);
+            if (item.isBogof == true) {
+                bogofItems.add(item);
+            }
+        }
+        return bogofItems;
+    }
+
+
+
+
+
+
+
     public double getTotalAfterDiscounts() {
         return 0.5;
     }
@@ -48,7 +69,7 @@ public class ShoppingBasket {
 
     }
 
-    public applyBogof() {
+    public double applyBogof() {
 
         // Check if there are bogof eligible items in the basket
         // If so, apply the discount to them
@@ -58,7 +79,7 @@ public class ShoppingBasket {
         // 
 
 
-
+        return 884.2;
 
 
 

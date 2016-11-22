@@ -13,6 +13,7 @@ public class ShoppingBasketTest {
     Item basil = new Item("basil", 1.20, false);
     
     ArrayList<Item> basketContents = new ArrayList<Item>();
+    ArrayList<Item> bogofItems = new ArrayList<Item>();
     
     @Before
     public void before() {
@@ -49,15 +50,17 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void canCheckForBogofItems() {
-
+    public void canGetBogofItems() {
+        bogofItems = basket.getBogofItems();
+        for (int i=0; i < bogofItems.size(); i++) {
+            assertTrue(bogofItems.get(i).isBogof);
+        }
     }
 
     @Test
     public void canFindBogofPairs() {
-        
-    }
 
+    }
 
     @Test
     public void canApplyBogof() {
