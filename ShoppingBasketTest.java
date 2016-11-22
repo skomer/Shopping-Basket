@@ -45,7 +45,7 @@ public class ShoppingBasketTest {
 
     @Test
     public void canGetTotalBeforeDiscounts() {
-        
+        assertEquals(21.47, basket.getTotalBeforeDiscounts(), 0.001);
     }
 
 

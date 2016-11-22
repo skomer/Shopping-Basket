@@ -24,7 +24,12 @@ public class ShoppingBasket {
     }
 
     public double getTotalBeforeDiscounts() {
-        return 2.3;
+        this.totalBeforeDiscounts = 0;
+        for (int i=0; i<basketContents.size(); i++) {
+            double itemPrice = basketContents.get(i).basePrice;
+            this.totalBeforeDiscounts += itemPrice;
+        }
+        return this.totalBeforeDiscounts;
     }
 
     public void addItem(Item item) {
