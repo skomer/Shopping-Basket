@@ -15,7 +15,7 @@ public class ItemTest {
 
     @Test
     public void hasBasePrice() {
-
+        assertEquals(4.99, lightbulb.getBasePrice(), 0.001);
     }
 
     @Test
