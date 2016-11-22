@@ -20,7 +20,7 @@ public class ItemTest {
 
     @Test
     public void isBogofOrNot() {
-
+        assertEquals(false, frozenPizza.getIsBogof());
     }
 
 
