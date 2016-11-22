@@ -10,6 +10,7 @@ public class ShoppingBasketTest {
     Item drainCleaner = new Item("drain cleaner", 6.99, false);
     Item steak = new Item("steak", 10.49, false);
     Item orange = new Item("orange", 1.00, true);
+    Item basil = new Item("basil", 1.20, false);
     
     ArrayList<Item> basketContents = new ArrayList<Item>();
     
@@ -26,13 +27,13 @@ public class ShoppingBasketTest {
 
     @Test
     public void hasContents() {
-        //basket.getBasketContents();
         assertTrue(basket.getBasketContents().size() > 0);
     }
 
     @Test
     public void canAddItem() {
-
+        basket.addItemToBasket(basil);
+        assertTrue(basket.getBasketContents().size() == 7);
     }
 
     @Test
