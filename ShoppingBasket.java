@@ -23,6 +23,10 @@ public class ShoppingBasket {
         return this.basketContents;
     }
 
+    public double getTotalBeforeDiscounts() {
+        return 2.3;
+    }
+
     public void addItem(Item item) {
         this.basketContents.add(item);
     }
@@ -31,15 +35,24 @@ public class ShoppingBasket {
         this.basketContents.remove(item);
     }
 
-    // public applyBogofDiscount() {
+    public double getTotalAfterDiscounts() {
+        return 0.5;
+    }
+
+    public void applyDiscounts() {
+
+    }
+
+
+    // public applyBogof() {
 
     // }
 
-    // public applyTwentyPoundsOrOverDiscount() {
+    // public applyTwentyPoundsOrOver() {
 
     // }
 
-    // public applyLoyaltyDiscount() {
+    // public applyLoyalty() {
 
     // }
 

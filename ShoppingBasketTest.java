@@ -44,17 +44,23 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void canApplyBogofDiscount() {
+    public void canGetTotalBeforeDiscounts() {
+        
+    }
+
+
+    @Test
+    public void canApplyBogof() {
 
     }
 
     @Test
-    public void canApplyTwentyPoundsOrOverDiscount() {
+    public void canApplyTwentyPoundsOrOver() {
 
     }
 
     @Test
-    public void canApplyLoyaltyDiscount() {
+    public void canApplyLoyalty() {
 
     }
 
