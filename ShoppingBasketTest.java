@@ -32,13 +32,15 @@ public class ShoppingBasketTest {
 
     @Test
     public void canAddItem() {
-        basket.addItemToBasket(basil);
+        basket.addItem(basil);
         assertTrue(basket.getBasketContents().size() == 7);
     }
 
     @Test
     public void canRemoveItem() {
-
+        basket.removeItem(steak);
+        assertTrue(basket.getBasketContents().size() == 5);
+        assertFalse(basket.getBasketContents().contains(steak));
     }
 
     @Test

@@ -23,12 +23,12 @@ public class ShoppingBasket {
         return this.basketContents;
     }
 
-    public void addItemToBasket(Item item) {
+    public void addItem(Item item) {
         this.basketContents.add(item);
     }
 
-    public void removeItemFromBasket(Item item) {
-        // this.basketContents.delete(item);
+    public void removeItem(Item item) {
+        this.basketContents.remove(item);
     }
 
     // public applyBogofDiscount() {
