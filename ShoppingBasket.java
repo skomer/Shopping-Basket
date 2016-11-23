@@ -66,28 +66,20 @@ public class ShoppingBasket {
         return bogofItems;
     }
 
-    // public void sortBogofItems() {
-    //     ArrayList<Item> unsortedBogofItems = getBogofItems();
-    //     //ArrayList<Item> bogofItems = getBogofItems();
-    //     // for (int i = 0; i < this.bogofItems.size(); i++) {
-    //     //     System.out.println(this.bogofItems.get(i).name);
-    //     // }
-    //     // System.out.println("-------------------");
-    //     Collections.sort(unsortedBogofItems);
-
-    //     // for (int i = 0; i < this.bogofItems.size(); i++) {
-    //     //     System.out.println(this.bogofItems.get(i).name);
-    //     // }
-    // }
-
     public double setBogofDiscount() {
         double calculatedBogofDiscount = 0.0;
         for (int i = 0; i < this.bogofItems.size(); i++) {
-            if (this.bogofItems.get(i+1).name == this.bogofItems.get(i).name) {
-                calculatedBogofDiscount += this.bogofItems.get(i+1).basePrice;
-                i += 1;
+
+            try {
+                if (this.bogofItems.get(i+1).name == this.bogofItems.get(i).name) {
+                    calculatedBogofDiscount += this.bogofItems.get(i+1).basePrice;
+                    i += 1;
+                }
+            } catch (IndexOutOfBoundsException ioobe) {
+                int x = 1;
             }
         }
+
         return calculatedBogofDiscount;
     }
 
