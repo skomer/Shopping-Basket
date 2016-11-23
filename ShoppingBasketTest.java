@@ -104,17 +104,17 @@ public class ShoppingBasketTest {
 
     @Test
     public void canGetBogofItems() {
-        bogofItems1 = basket1.getBogofItems();
-        bogofItems2 = basket2.getBogofItems();
-        bogofItems3 = basket3.getBogofItems();
-        for (int i=0; i < bogofItems1.size(); i++) {
-            assertTrue(bogofItems1.get(i).isBogof);
-        }
-        for (int i=0; i < bogofItems2.size(); i++) {
-            assertTrue(bogofItems2.get(i).isBogof);
-        }
-        for (int i=0; i < bogofItems3.size(); i++) {
-            assertTrue(bogofItems3.get(i).isBogof);
+        ArrayList<ArrayList<Item>> bogofItems = new ArrayList<ArrayList<Item>>();
+        bogofItems.add(basket1.getBogofItems());
+        bogofItems.add(basket2.getBogofItems());
+        bogofItems.add(basket3.getBogofItems());
+        bogofItems.add(basket4.getBogofItems());
+
+        for (int i = 0; i < bogofItems.size(); i++) {
+            for (int j = 0; j < bogofItems.get(i).size(); j++) {
+                System.out.println(bogofItems.get(i).get(j).name + bogofItems.get(i).get(j).isBogof) ;
+                assertTrue(bogofItems.get(i).get(j).isBogof);
+            }
         }
     }
 
