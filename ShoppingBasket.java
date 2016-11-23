@@ -17,8 +17,16 @@ public class ShoppingBasket {
     public ShoppingBasket(ArrayList<Item> basketContents) {
         this.basketContents = basketContents;
         this.bogofItems = getBogofItems();
+        //this.totalBeforeDiscounts = getTotalBeforeDiscounts;
+        this.bogofDiscount = setBogofDiscount();
+
+
+
+        //this.totalAfterDiscounts = 0.0;
+
     }
 
+    // unneeded constructor?
     // public ShoppingBasket(ArrayList<Item> basketContents, double totalBeforeDiscounts, double totalAfterDiscounts) {
     //     this.basketContents = basketContents;
     //     this.totalBeforeDiscounts = totalBeforeDiscounts;
@@ -54,24 +62,43 @@ public class ShoppingBasket {
                 bogofItems.add(item);
             }
         }
+        Collections.sort(bogofItems);
         return bogofItems;
     }
 
-    public void sortBogofItems() {
-        //ArrayList<Item> bogofItems = getBogofItems();
-        // for (int i = 0; i < this.bogofItems.size(); i++) {
-        //     System.out.println(this.bogofItems.get(i).name);
-        // }
-        // System.out.println("-------------------");
-        Collections.sort(this.bogofItems);
+    // public void sortBogofItems() {
+    //     ArrayList<Item> unsortedBogofItems = getBogofItems();
+    //     //ArrayList<Item> bogofItems = getBogofItems();
+    //     // for (int i = 0; i < this.bogofItems.size(); i++) {
+    //     //     System.out.println(this.bogofItems.get(i).name);
+    //     // }
+    //     // System.out.println("-------------------");
+    //     Collections.sort(unsortedBogofItems);
 
-        // for (int i = 0; i < this.bogofItems.size(); i++) {
-        //     System.out.println(this.bogofItems.get(i).name);
-        // }
+    //     // for (int i = 0; i < this.bogofItems.size(); i++) {
+    //     //     System.out.println(this.bogofItems.get(i).name);
+    //     // }
+    // }
+
+    public double setBogofDiscount() {
+        double calculatedBogofDiscount = 0.0;
+        for (int i = 0; i < this.bogofItems.size(); i++) {
+            if (this.bogofItems.get(i+1).name == this.bogofItems.get(i).name) {
+                calculatedBogofDiscount += this.bogofItems.get(i+1).basePrice;
+                i += 1;
+            }
+        }
+        return calculatedBogofDiscount;
+    }
+
+
+
+    public double getBogofDiscount() {
+        return this.bogofDiscount;
     }
 
     public double getTotalAfterDiscounts() {
-        return 0.5;
+        return 0.01;
     }
 
     public void applyDiscounts() {
@@ -88,7 +115,7 @@ public class ShoppingBasket {
         // 
 
 
-        return 884.2;
+        return 0.01;
 
 
 

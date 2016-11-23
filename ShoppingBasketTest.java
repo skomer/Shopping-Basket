@@ -58,8 +58,8 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void fakeTest() {
-        basket.sortBasket();
+    public void bogofItemsAreSortedByName() {
+
     }
 
 
@@ -68,7 +68,7 @@ public class ShoppingBasketTest {
 
     @Test
     public void canGetBogofDiscount() {
-
+        assertEquals(4.99, basket.getBogofDiscount(), 0.001);
     }
 
     @Test
