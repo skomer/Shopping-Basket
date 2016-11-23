@@ -1,5 +1,5 @@
 
-public class Item {
+public class Item implements Comparable<Item> {
 
     String name;
     double basePrice;
@@ -23,5 +23,23 @@ public class Item {
         return this.isBogof;
     }
 
+    //@Override
+    public int compareTo(Item otherItem) {
+        // return (this.getName() < item.getName() ? -1 :
+        //     (this.getName() == item.getName() ? 0 : 1)
+        // );
+        return this.name.compareTo(otherItem.name);
+    }
+
+
 
 }
+
+
+
+
+
+
+
+
+

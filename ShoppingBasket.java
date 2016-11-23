@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Collections;
 
 public class ShoppingBasket {
 
@@ -9,19 +11,19 @@ public class ShoppingBasket {
 
     double bogofDiscount;
 
-
     public ShoppingBasket() {
     }
 
     public ShoppingBasket(ArrayList<Item> basketContents) {
         this.basketContents = basketContents;
+        this.bogofItems = getBogofItems();
     }
 
-    public ShoppingBasket(ArrayList<Item> basketContents, double totalBeforeDiscounts, double totalAfterDiscounts) {
-        this.basketContents = basketContents;
-        this.totalBeforeDiscounts = totalBeforeDiscounts;
-        this.totalAfterDiscounts = totalAfterDiscounts;
-    }
+    // public ShoppingBasket(ArrayList<Item> basketContents, double totalBeforeDiscounts, double totalAfterDiscounts) {
+    //     this.basketContents = basketContents;
+    //     this.totalBeforeDiscounts = totalBeforeDiscounts;
+    //     this.totalAfterDiscounts = totalAfterDiscounts;
+    // }
 
     public ArrayList<Item> getBasketContents() {
         return this.basketContents;
@@ -45,7 +47,7 @@ public class ShoppingBasket {
     }
 
     public ArrayList<Item> getBogofItems() {
-        bogofItems = new ArrayList<Item>();
+        ArrayList<Item> bogofItems = new ArrayList<Item>();
         for (int i=0; i < basketContents.size(); i++) {
             Item item = basketContents.get(i);
             if (item.isBogof == true) {
@@ -55,11 +57,18 @@ public class ShoppingBasket {
         return bogofItems;
     }
 
+    public void sortBasket() {
+        //ArrayList<Item> bogofItems = getBogofItems();
+        for (int i = 0; i < this.bogofItems.size(); i++) {
+            System.out.println(this.bogofItems.get(i).name);
+        }
+        System.out.println("-------------------");
+        Collections.sort(this.bogofItems);
 
-
-
-
-
+        for (int i = 0; i < this.bogofItems.size(); i++) {
+            System.out.println(this.bogofItems.get(i).name);
+        }
+    }
 
     public double getTotalAfterDiscounts() {
         return 0.5;

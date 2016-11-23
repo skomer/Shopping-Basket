@@ -58,7 +58,16 @@ public class ShoppingBasketTest {
     }
 
     @Test
-    public void canFindBogofPairs() {
+    public void fakeTest() {
+        basket.sortBasket();
+    }
+
+
+
+
+
+    @Test
+    public void canGetBogofDiscount() {
 
     }
 
