@@ -13,16 +13,11 @@ public class ShoppingBasketTest {
     Item steak = new Item("steak", 10.49, false);
     Item orange = new Item("orange", 1.00, true);
     Item basil = new Item("basil", 1.20, false);
-
-
     Item pen = new Item("pen", 0.69, true);
     Item ruler = new Item("ruler", 0.90, true);
     Item rubbish = new Item("rubbish", 17.95, true);
     Item egg = new Item("egg", 1.31, false);
 
-
-
-    
     ArrayList<Item> basketContents1 = new ArrayList<Item>();
     ArrayList<Item> basketContents2 = new ArrayList<Item>();
     ArrayList<Item> basketContents3 = new ArrayList<Item>();
@@ -51,6 +46,27 @@ public class ShoppingBasketTest {
         basketContents2.add(steak);
         basketContents2.add(toothpaste);
         basket2 = new ShoppingBasket(basketContents2);
+
+        basketContents3.add(rubbish);
+        basketContents3.add(rubbish);
+        basketContents3.add(rubbish);
+        basketContents3.add(rubbish);
+        basketContents3.add(rubbish);
+        basketContents3.add(rubbish);
+        basketContents3.add(drainCleaner);
+        basketContents3.add(rubbish);
+        basketContents3.add(rubbish);
+        basketContents3.add(rubbish);
+        basketContents3.add(rubbish);
+        basketContents3.add(rubbish);
+        basketContents3.add(egg);
+        basketContents3.add(rubbish);
+        basketContents3.add(rubbish);
+        basketContents3.add(rubbish);
+        basketContents3.add(rubbish);
+        basketContents3.add(pen);
+        basket3 = new ShoppingBasket(basketContents3);
+
     }
 
     @Test
@@ -75,6 +91,7 @@ public class ShoppingBasketTest {
     public void canGetTotalBeforeDiscounts() {
         assertEquals(21.47, basket1.getTotalBeforeDiscounts(), 0.001);
         assertEquals(23.86, basket2.getTotalBeforeDiscounts(), 0.001);
+        assertEquals(278.24, basket3.getTotalBeforeDiscounts(), 0.001);
     }
 
     @Test
@@ -90,12 +107,11 @@ public class ShoppingBasketTest {
 
     }
 
-
-
     @Test
     public void canGetBogofDiscount() {
         assertEquals(4.99, basket1.getBogofDiscount(), 0.001);
-        //assertEquals(x, basket2.getBogofDiscount(), 0.001);
+        assertEquals(2.38, basket2.getBogofDiscount(), 0.001);
+        assertEquals(125.65, basket3.getBogofDiscount(), 0.001);
     }
 
     @Test
