@@ -7,6 +7,7 @@ public class ShoppingBasketTest {
     ShoppingBasket basket1;
     ShoppingBasket basket2;
     ShoppingBasket basket3;
+    ShoppingBasket basket4;
     
     Item toothpaste = new Item("toothpaste", 3.99, true);
     Item drainCleaner = new Item("drain cleaner", 6.99, false);
@@ -21,7 +22,11 @@ public class ShoppingBasketTest {
     ArrayList<Item> basketContents1 = new ArrayList<Item>();
     ArrayList<Item> basketContents2 = new ArrayList<Item>();
     ArrayList<Item> basketContents3 = new ArrayList<Item>();
-    ArrayList<Item> bogofItems = new ArrayList<Item>();
+    ArrayList<Item> basketContents4 = new ArrayList<Item>();
+    ArrayList<Item> bogofItems1 = new ArrayList<Item>();
+    ArrayList<Item> bogofItems2 = new ArrayList<Item>();
+    ArrayList<Item> bogofItems3 = new ArrayList<Item>();
+    ArrayList<Item> bogofItems4 = new ArrayList<Item>();
     
     @Before
     public void before() {
@@ -67,6 +72,9 @@ public class ShoppingBasketTest {
         basketContents3.add(pen);
         basket3 = new ShoppingBasket(basketContents3);
 
+        basketContents4.add(drainCleaner);
+        basket4 = new ShoppingBasket(basketContents4);
+
     }
 
     @Test
@@ -96,9 +104,17 @@ public class ShoppingBasketTest {
 
     @Test
     public void canGetBogofItems() {
-        bogofItems = basket1.getBogofItems();
-        for (int i=0; i < bogofItems.size(); i++) {
-            assertTrue(bogofItems.get(i).isBogof);
+        bogofItems1 = basket1.getBogofItems();
+        bogofItems2 = basket2.getBogofItems();
+        bogofItems3 = basket3.getBogofItems();
+        for (int i=0; i < bogofItems1.size(); i++) {
+            assertTrue(bogofItems1.get(i).isBogof);
+        }
+        for (int i=0; i < bogofItems2.size(); i++) {
+            assertTrue(bogofItems2.get(i).isBogof);
+        }
+        for (int i=0; i < bogofItems3.size(); i++) {
+            assertTrue(bogofItems3.get(i).isBogof);
         }
     }
 
@@ -118,6 +134,15 @@ public class ShoppingBasketTest {
     public void canApplyBogof() {
 
     }
+
+    @Test
+    public void canCalculateTenPerCentDiscount() {
+        assertEquals(0.0, basket1.getTenPerCentDiscount(), 0.001);
+        assertEquals(2.148, basket2.getTenPerCentDiscount(), 0.001);
+        assertEquals(15.259, basket3.getTenPerCentDiscount(), 0.001);
+        assertEquals(0.0, basket4.getTenPerCentDiscount(), 0.001);
+    }
+
 
     @Test
     public void canApplyTwentyPoundsOrOver() {

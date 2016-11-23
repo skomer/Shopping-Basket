@@ -4,35 +4,29 @@ import java.util.Collections;
 
 public class ShoppingBasket {
 
+    //////-//////-////// VARIABLE DECLARATIONS //////-//////-//////
     ArrayList<Item> basketContents;
     ArrayList<Item> bogofItems;
     double totalBeforeDiscounts;
+    double bogofDiscount;
+    double tenPerCentDiscount;
+    double loyaltyDiscount;
     double totalAfterDiscounts;
 
-    double bogofDiscount;
-
-    public ShoppingBasket() {
-    }
+    //////-//////-////// CONSTRUCTORS //////-//////-//////
+    public ShoppingBasket() {}
 
     public ShoppingBasket(ArrayList<Item> basketContents) {
         this.basketContents = basketContents;
+        this.totalBeforeDiscounts = getTotalBeforeDiscounts();
         this.bogofItems = getBogofItems();
-        //this.totalBeforeDiscounts = getTotalBeforeDiscounts;
         this.bogofDiscount = setBogofDiscount();
-
-
-
-        //this.totalAfterDiscounts = 0.0;
-
+        this.tenPerCentDiscount = setTenPerCentDiscount();
+        //this.loyaltyDiscount = xxx;
+        //this.totalAfterDiscounts = xxx;
     }
 
-    // unneeded constructor?
-    // public ShoppingBasket(ArrayList<Item> basketContents, double totalBeforeDiscounts, double totalAfterDiscounts) {
-    //     this.basketContents = basketContents;
-    //     this.totalBeforeDiscounts = totalBeforeDiscounts;
-    //     this.totalAfterDiscounts = totalAfterDiscounts;
-    // }
-
+    //////-//////-////// METHODS //////-//////-//////
     public ArrayList<Item> getBasketContents() {
         return this.basketContents;
     }
@@ -83,43 +77,39 @@ public class ShoppingBasket {
         return calculatedBogofDiscount;
     }
 
-
-
     public double getBogofDiscount() {
         return this.bogofDiscount;
+    }
+
+    public double setTenPerCentDiscount() {
+        double subTotal = this.totalBeforeDiscounts - this.bogofDiscount;
+        double calculatedTenPerCentDiscount;
+        if (subTotal > 20.00) {
+            calculatedTenPerCentDiscount = subTotal * 0.1;
+        }
+        else {
+            calculatedTenPerCentDiscount = 0.0;
+        }
+        return calculatedTenPerCentDiscount;
+    }
+
+    public double getTenPerCentDiscount() {
+        return this.tenPerCentDiscount;
+    }
+
+    // public applyLoyalty() {
+
+    // }
+
+    public void getTotalDiscountAmount() {
+
     }
 
     public double getTotalAfterDiscounts() {
         return 0.01;
     }
 
-    public void applyDiscounts() {
 
-    }
-
-    public double applyBogof() {
-
-        // Check if there are bogof eligible items in the basket
-        // If so, apply the discount to them
-        // check for duplicates in the basket?
-        // extract items from the basket who have bogof=true
-        // match them up somehow
-        // 
-
-
-        return 0.01;
-
-
-
-    }
-
-    // public applyTwentyPoundsOrOver() {
-
-    // }
-
-    // public applyLoyalty() {
-
-    // }
 
     public void emptyBasket() {
 
