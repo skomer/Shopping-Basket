@@ -57,17 +57,17 @@ public class ShoppingBasket {
         return bogofItems;
     }
 
-    public void sortBasket() {
+    public void sortBogofItems() {
         //ArrayList<Item> bogofItems = getBogofItems();
-        for (int i = 0; i < this.bogofItems.size(); i++) {
-            System.out.println(this.bogofItems.get(i).name);
-        }
-        System.out.println("-------------------");
+        // for (int i = 0; i < this.bogofItems.size(); i++) {
+        //     System.out.println(this.bogofItems.get(i).name);
+        // }
+        // System.out.println("-------------------");
         Collections.sort(this.bogofItems);
 
-        for (int i = 0; i < this.bogofItems.size(); i++) {
-            System.out.println(this.bogofItems.get(i).name);
-        }
+        // for (int i = 0; i < this.bogofItems.size(); i++) {
+        //     System.out.println(this.bogofItems.get(i).name);
+        // }
     }
 
     public double getTotalAfterDiscounts() {
